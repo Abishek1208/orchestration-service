@@ -27,7 +27,7 @@ public class TestController
     public String ping()
     {
         log.info("Received ping request");
-        String response = "pong from v5.0";
+        String response = "pong";
         log.info("Returning response: {}", response);
         return response;
     }
