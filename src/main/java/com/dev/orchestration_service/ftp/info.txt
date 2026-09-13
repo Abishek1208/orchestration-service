@@ -1,0 +1,29 @@
+1. Docker command for starting ftp server
+
+ docker run -d \
+  --name ftp-server \
+  -p 21:21 \
+  -p 30000-30009:30000-30009 \
+  -e FTP_USER=testuser \
+  -e FTP_PASS=testpass \
+  -e FTP_HOME=/home/testuser \
+  -e PASV_ENABLE=YES \
+  -e PASV_MIN_PORT=30000 \
+  -e PASV_MAX_PORT=30009 \
+  -e PASV_ADDRESS=127.0.0.1 \
+  fauria/vsftpd
+
+-------------------------------------------------------------------------------------
+
+  2. minIO start command
+
+  docker run -d \
+    --name minio \
+    -p 9000:9000 \
+    -p 9001:9001 \
+    -e MINIO_ROOT_USER=minioadmin \
+    -e MINIO_ROOT_PASSWORD=minioadmin123 \
+    minio/minio server /data --console-address ":9001"
+
+-------------------------------------------------------------------------------------
+

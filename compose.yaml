@@ -1,0 +1,13 @@
+services:
+
+  orchestration-service:
+    image: orchestration-service:2.0
+    container_name: orch-service
+    ports:
+      - "8021:8021"
+
+  test-service:
+    image: test-service:1.0
+    container_name: test-service
+    ports:
+      - "8022:8022"
